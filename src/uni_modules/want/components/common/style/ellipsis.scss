@@ -1,0 +1,13 @@
+@import './mixins/ellipsis.scss';
+
+.wan-ellipsis {
+  @include ellipsis();
+}
+
+.wan-multi-ellipsis--l2 {
+  @include multi-ellipsis(2);
+}
+
+.wan-multi-ellipsis--l3 {
+  @include multi-ellipsis(3);
+}
