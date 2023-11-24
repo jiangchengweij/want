@@ -51,11 +51,11 @@ jobs:
       - name: Build with UniApp
         run: |
           npm run build:h5
-          touch dist/.nojekyll
+          touch dist/build/h5/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: dist
+          path: dist/build/h5
 
   # Deployment job
   deploy:
