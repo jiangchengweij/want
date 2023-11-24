@@ -20,6 +20,3 @@ dist
 *.sln
 *.sw?
 
-.hbuilderx/
-unpackage/
-.vite/
