@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "appid": "",
+  "name": "Want组件",
+  "appid": "__UNI__2E47089",
   "description": "",
   "versionName": "1.0.0",
   "versionCode": "100",
@@ -68,5 +68,11 @@
   "uniStatistics": {
     "enable": false
   },
-  "vueVersion": "3"
+  "vueVersion": "3",
+  "h5": {
+    "title": "Want组件演示",
+    "router": {
+      "base": "/want/"
+    }
+  }
 }
