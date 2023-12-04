@@ -1,11 +1,14 @@
 const fs = require('fs');
 const gulp = require('gulp');
+const yaml = require('js-yaml');
+const insert = require('gulp-insert');
 const rename = require('gulp-rename');
 const util = require('util');
 const path = require('path');
 const ts = require('gulp-typescript');
 const gulpif = require('gulp-if');
 const merge2 = require('merge2');
+const transformApiDoc = require('./transformApiDoc');
 
 const exec = util.promisify(require('child_process').exec);
 const componentPrefix = 'wan';
@@ -19,7 +22,10 @@ const exampleDistDir = path.resolve(
   '../example/uni_modules/want/components'
 );
 
-const examplePagesDir = path.resolve(__dirname, '../example/pages/components');
+const examplePagesDir = path.resolve(
+  __dirname,
+  '../example/pages/componentstest'
+);
 
 const fileRename = () =>
   rename((path) => {
@@ -29,6 +35,28 @@ const fileRename = () =>
         path.basename = `${componentPrefix}-${path.basename}`;
       }
     }
+  });
+
+const addJsDoc = () =>
+  insert.transform((contents, file) => {
+    const readmePath = file.dirname + '\\README.md';
+    try {
+      fs.accessSync(readmePath, fs.constants.R_OK);
+      const readmeContent = fs.readFileSync(readmePath, { encoding: 'utf8' });
+      const matchStr = readmeContent.match(/---([\s\S]+)---/);
+      if (!matchStr) return contents;
+      const index = contents.indexOf('export default {');
+      const frontmatter = yaml.load(matchStr[1]);
+      const apiDoc = transformApiDoc(frontmatter);
+      if (index > -1) {
+        const start = contents.substring(0, index);
+        const end = contents.substring(index);
+        return start + apiDoc + end;
+      }
+    } catch (e) {
+      /* empty */
+    }
+    return contents;
   });
 
 const tsCompiler = (dist, config) =>
@@ -50,6 +78,23 @@ const copier = (dist, ext) =>
   function copy() {
     const srcPath = [`${src}/**/*.${ext}`];
     srcPath.push(`!${src}/**/demo/**/*.${ext}`);
+    if (ext === 'vue') {
+      return merge2(
+        gulp
+          .src(srcPath)
+          .pipe(addJsDoc())
+          .pipe(fileRename())
+          .pipe(gulp.dest(dist)),
+        gulp
+          .src([`${src}/**/demo/**/*.${ext}`])
+          .pipe(
+            rename((path) => {
+              path.dirname = path.dirname.replace('\\demo', '');
+            })
+          )
+          .pipe(gulp.dest(examplePagesDir))
+      );
+    }
     return gulp.src(srcPath).pipe(fileRename()).pipe(gulp.dest(dist));
   };
 
@@ -71,10 +116,7 @@ tasks.buildExample = gulp.series(
   cleaner(exampleDistDir),
   gulp.parallel(
     tsCompiler(exampleDistDir, exampleConfig),
-    staticCopier(exampleDistDir),
-    () => {
-      const pageJson = JSON.parse(fs.readFileSync(examplePageJsonPath));
-    }
+    staticCopier(exampleDistDir)
     // () => {
     //   gulp.watch(`${src}/**/*.vue`, copier(exampleDistDir, "vue"));
     //   gulp.watch(`${src}/**/*.scss`, copier(exampleDistDir, "scss"));
