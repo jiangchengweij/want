@@ -19,3 +19,6 @@ dist
 *.njsproj
 *.sln
 *.sw?
+
+example/pages/components
+example/uni_modules/want/components
