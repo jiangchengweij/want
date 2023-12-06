@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "esModuleInterop": true,
+    "target": "es6",
+    "declaration": true,
+    "noImplicitAny": false,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "strict": true,
+    "lib": ["ESNext", "dom"],
+    "moduleResolution": "node",
+    "types": ["@dcloudio/types"],
+    "skipLibCheck": true
+  },
+  "include": ["./packages/**/*.ts", "./packages/**/*.d.ts"]
+}
