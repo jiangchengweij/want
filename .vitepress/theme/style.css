@@ -68,9 +68,6 @@
   --vp-c-danger-2: var(--vp-c-red-2);
   --vp-c-danger-3: var(--vp-c-red-3);
   --vp-c-danger-soft: var(--vp-c-red-soft);
-  --vp-font-family-base: 'Open Sans', -apple-system, BlinkMacSystemFont,
-    'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'miui',
-    'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
 }
 
 /**
@@ -138,4 +135,28 @@
 
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
+}
+
+/* .VPDoc .content {
+  padding-left: 0;
+  padding-right: 0;
+} */
+
+/* .VPDoc .content .content-container {
+  width: 100%;
+} */
+
+.VPDoc {
+  padding-left: 0 !important;
+}
+
+.VPDoc .aside {
+  padding-left: 0 !important;
+}
+
+.aside {
+  max-width: 360px !important;
+}
+.aside-container {
+  width: 360px !important;
 }

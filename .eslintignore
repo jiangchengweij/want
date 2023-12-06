@@ -1,5 +1,5 @@
 lib
 dist
-example
+src
 node_modules
 .vitepress

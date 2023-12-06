@@ -1,0 +1,5 @@
+@import './mixins/clearfix.scss';
+
+.wan-clearfix {
+  @include clearfix();
+}

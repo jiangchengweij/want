@@ -15,17 +15,14 @@ const componentPrefix = 'wan';
 const exampleConfig = path.resolve(__dirname, '../tsconfig.example.json');
 const src = path.resolve(__dirname, '../packages');
 
-const examplePageJsonPath = path.resolve(__dirname, '../example/pages.json');
+const examplePageJsonPath = path.resolve(__dirname, '../src/pages.json');
 
 const exampleDistDir = path.resolve(
   __dirname,
-  '../example/uni_modules/want/components'
+  '../src/uni_modules/want/components'
 );
 
-const examplePagesDir = path.resolve(
-  __dirname,
-  '../example/pages/componentstest'
-);
+const examplePagesDir = path.resolve(__dirname, '../src/pages/componentstest');
 
 const fileRename = () =>
   rename((path) => {

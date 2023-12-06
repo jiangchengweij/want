@@ -41,7 +41,7 @@ onReady(() => {
 
 function onClick(url) {
   uni.navigateTo({
-    url: `/pages/components${url}/index.vue`,
+    url: `/pages/components${url}/index`,
     success() {
       // #ifdef MP-ALIPAY
       setTimeout(() => {
