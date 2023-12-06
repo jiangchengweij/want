@@ -4,22 +4,19 @@ import { defineConfig } from 'vitepress';
 export default defineConfig({
   title: 'Want文档',
   description: 'A VitePress Site',
+  rewrites: {
+    'README.md': 'index.md',
+    'packages/:pkg/README.md': ':pkg/index.md'
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
-    ],
+    nav: [],
     sidebar: [
       {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
+        text: '开发指南',
+        items: [{ text: '介绍', link: '/' }]
       }
     ],
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ]
