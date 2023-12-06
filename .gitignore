@@ -20,5 +20,8 @@ dist
 *.sln
 *.sw?
 
+.temp
+.cache
+
 example/pages/components
 example/uni_modules/want/components

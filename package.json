@@ -6,7 +6,10 @@
     "dev": "node build/dev.mjs",
     "lint": "npm run lint:script && npm run lint:style",
     "lint:script": "eslint --ext .js,.ts --fix --quiet ./packages",
-    "lint:style": "stylelint --fix \"./packages/**/*.scss\""
+    "lint:style": "stylelint --fix \"./packages/**/*.scss\"",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
   },
   "keywords": [],
   "author": "",
@@ -16,11 +19,11 @@
     "pre-commit": "npm run lint"
   },
   "lint-staged": {
-    "**/*.{js,vue,ts}": [
+    "./packages/**/*.{js,vue,ts}": [
       "npm run lint:script",
       "git add ."
     ],
-    "**/*.{scss}": [
+    "./packages/**/*.{scss}": [
       "npm run lint:style",
       "git add ."
     ]
