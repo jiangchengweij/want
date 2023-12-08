@@ -3,6 +3,8 @@ const gulp = require('gulp');
 const yaml = require('js-yaml');
 const insert = require('gulp-insert');
 const rename = require('gulp-rename');
+const replace = require('gulp-replace');
+const prettier = require('gulp-plugin-prettier');
 const util = require('util');
 const path = require('path');
 const ts = require('gulp-typescript');
@@ -12,24 +14,23 @@ const transformApiDoc = require('./transformApiDoc');
 
 const exec = util.promisify(require('child_process').exec);
 const componentPrefix = 'wan';
-const exampleConfig = path.resolve(__dirname, '../tsconfig.example.json');
+const srcConfig = path.resolve(__dirname, '../tsconfig.example.json');
 const src = path.resolve(__dirname, '../packages');
-
-const examplePageJsonPath = path.resolve(__dirname, '../src/pages.json');
-
-const exampleDistDir = path.resolve(
+const srcPageJsonPath = path.resolve(__dirname, '../src/pages.json');
+const srcDistDir = path.resolve(
   __dirname,
   '../src/uni_modules/want/components'
 );
 
-const examplePagesDir = path.resolve(__dirname, '../src/pages/componentstest');
+const examplePagesDir = path.resolve(__dirname, '../src/pages/components');
 
 const fileRename = () =>
   rename((path) => {
     if (path.dirname.indexOf('common') === -1) {
-      path.dirname = `${componentPrefix}-${path.dirname}`;
+      const componentName = path.dirname;
+      path.dirname = `${componentPrefix}-${componentName}`;
       if (path.basename === 'index' && path.extname === '.vue') {
-        path.basename = `${componentPrefix}-${path.basename}`;
+        path.basename = `${componentPrefix}-${componentName}`;
       }
     }
   });
@@ -64,10 +65,18 @@ const tsCompiler = (dist, config) =>
     const tsResult = tsProject.src().pipe(tsProject());
 
     return merge2(
-      tsResult.js.pipe(fileRename()).pipe(gulp.dest(dist)),
+      tsResult.js
+        .pipe(fileRename())
+        .pipe(
+          prettier.format(
+            { singleQuote: true, semi: true },
+            { reporter: 'none' }
+          )
+        )
+        .pipe(gulp.dest(dist)),
       tsResult.dts
         .pipe(fileRename())
-        .pipe(gulpif(dist !== exampleDistDir, gulp.dest(dist)))
+        .pipe(gulpif(dist !== srcDistDir, gulp.dest(dist)))
     );
   };
 
@@ -81,6 +90,7 @@ const copier = (dist, ext) =>
           .src(srcPath)
           .pipe(addJsDoc())
           .pipe(fileRename())
+          .pipe(replace('<script lang="ts">', '<script>'))
           .pipe(gulp.dest(dist)),
         gulp
           .src([`${src}/**/demo/**/*.${ext}`])
@@ -110,10 +120,10 @@ const cleaner = (path) =>
 const tasks = {};
 
 tasks.buildExample = gulp.series(
-  cleaner(exampleDistDir),
+  cleaner(srcDistDir),
   gulp.parallel(
-    tsCompiler(exampleDistDir, exampleConfig),
-    staticCopier(exampleDistDir)
+    tsCompiler(srcDistDir, srcConfig),
+    staticCopier(srcDistDir)
     // () => {
     //   gulp.watch(`${src}/**/*.vue`, copier(exampleDistDir, "vue"));
     //   gulp.watch(`${src}/**/*.scss`, copier(exampleDistDir, "scss"));

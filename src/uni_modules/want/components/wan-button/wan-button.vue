@@ -35,14 +35,14 @@
     :app-parameter="appParameter"
     :aria-label="ariaLabel"
     @tap="onClick"
-    @getuserinfo="methods.onGetUserInfo"
-    @contact="methods.onContact"
-    @getphonenumber="methods.onGetPhoneNumber"
-    @getrealtimephonenumber="methods.onGetRealTimePhoneNumber"
-    @error="methods.onError"
-    @launchapp="methods.onLaunchApp"
-    @opensetting="methods.onOpenSetting"
-    @chooseavatar="methods.onChooseAvatar"
+    @getuserinfo="onGetUserInfo"
+    @contact="onContact"
+    @getphonenumber="onGetPhoneNumber"
+    @getrealtimephonenumber="onGetRealTimePhoneNumber"
+    @error="onError"
+    @launchapp="onLaunchApp"
+    @opensetting="onOpenSetting"
+    @chooseavatar="onChooseAvatar"
   >
     <template v-if="loading">
       <w-loading
@@ -62,9 +62,9 @@
     </template>
   </button>
 </template>
-<script >
+<script>
 import { getCurrentInstance } from 'vue';
-import { props, emits, setup } from './index';
+import { setup, props, emits } from './index';
 
 /**
 * Button 按钮
@@ -74,7 +74,7 @@ import { props, emits, setup } from './index';
 * @value success 
 * @value warning 
 * @value danger 
-* @property {e:MouseEvent=>void} open 事件名称 
+* @event {e:MouseEvent=>void} open 事件名称 
 * @example <wan-button></wan-button>
 */
 export default {
@@ -82,15 +82,11 @@ export default {
     virtualHost: true,
     styleIsolation: 'shared'
   },
-  props: { ...props },
+  props,
   emits: [...emits],
   setup(props, context) {
-    console.log(props);
-    console.log(context);
     const instance = getCurrentInstance();
-    const render = setup.call(instance, props, context);
-    console.log(render);
-    return { ...render };
+    return setup.call(instance, props, context);
   }
 };
 </script>

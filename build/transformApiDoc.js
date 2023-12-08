@@ -3,7 +3,7 @@ module.exports = (frontmatter) => {
   const mapFun = (item) => {
     const arr = item.split(' ');
     if (arr[0] === 'property' || arr[0] === 'event') {
-      return `* @property {${arr[1]}} ${arr[2]} ${arr[3]} ${
+      return `* @${arr[0]} {${arr[1]}} ${arr[2]} ${arr[3]} ${
         arr[4] ? '默认:' + arr[4] : ''
       }\n`;
     }

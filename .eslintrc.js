@@ -7,6 +7,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:vue/vue3-recommended',
+    'plugin:@typescript-eslint/recommended',
     // 1. 接入 prettier 的规则
     'prettier',
     'plugin:prettier/recommended'
@@ -20,15 +21,6 @@ module.exports = {
       parserOptions: {
         sourceType: 'script'
       }
-    },
-    {
-      files: ['*.ts'],
-      plugins: ['@typescript-eslint'],
-      parser: '@typescript-eslint/parser',
-      extends: ['plugin:@typescript-eslint/recommended'],
-      rules: {
-        '@typescript-eslint/no-unused-vars': 'warn'
-      }
     }
   ],
   parser: 'vue-eslint-parser',
@@ -37,10 +29,11 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['vue', 'prettier'],
+  plugins: ['vue', 'prettier', '@typescript-eslint'],
   rules: {
     'prettier/prettier': 'error',
     'vue/multi-word-component-names': 'off',
-    'no-unused-vars': 'warn'
+    'no-unused-vars': 'warn',
+    '@typescript-eslint/no-unused-vars': 'warn'
   }
 };

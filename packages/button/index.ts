@@ -4,6 +4,8 @@ import {
   emits as buttonEmits,
   setup as buttonSetup
 } from '../common/mixins/button';
+import { bem } from '../common/utils';
+
 export const emits = ['click', ...buttonEmits] as const;
 
 export const props = {
@@ -21,7 +23,29 @@ export const props = {
   loading: Boolean,
   hairline: Boolean,
   disabled: Boolean,
-  loadingText: String
+  loadingText: String,
+  loadingType: {
+    type: String,
+    default: 'circular'
+  },
+  type: {
+    type: String,
+    default: 'default'
+  },
+  dataset: null,
+  size: {
+    type: String,
+    default: 'normal'
+  },
+  loadingSize: {
+    type: String,
+    default: '20px'
+  },
+  color: String,
+  customStyle: [String, Object],
+  loadingClass: String,
+  customClass: String,
+  hoverClass: String
 };
 
 type Props = ExtractPropTypes<typeof props>;
@@ -29,8 +53,9 @@ type Props = ExtractPropTypes<typeof props>;
 type Context = SetupContext<CanWrite<typeof emits>>;
 
 export const setup = (props: Props, context: Context) => {
-  const { events: buttonEvents } = buttonSetup<Props, Context>(props, context);
+  const buttonSetupReturn = buttonSetup<Props, Context>(props, context);
   return {
-    ...buttonEvents
+    bem,
+    ...buttonSetupReturn
   };
 };
