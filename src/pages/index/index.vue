@@ -15,7 +15,6 @@
           :key="item.title"
           class="demo-home-nav__block"
           @tap="onClick(item.path)"
-          :style="{ backgroundColor: group.bgColor }"
         >
           {{ item.title }}
           <w-icon name="arrow" custom-class="demo-home-nav__icon" />
@@ -42,15 +41,6 @@ onReady(() => {
 function onClick(url) {
   uni.navigateTo({
     url: `/pages/components${url}/index`,
-    success() {
-      // #ifdef MP-ALIPAY
-      setTimeout(() => {
-        uni.setNavigationBarColor({
-          backgroundColor: '#fff'
-        });
-      }, 100);
-      // #endif
-    }
   });
 }
 </script>

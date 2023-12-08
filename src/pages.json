@@ -330,7 +330,10 @@
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "Want",
     "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "backgroundColor": "#F8F8F8",
+		"mp-alipay": {
+			"navigationBarBackgroundColor": "#1989fa"
+		}
   },
   "uniIdRouter": {}
 }

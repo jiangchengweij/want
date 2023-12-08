@@ -1,11 +1,11 @@
 <template>
   <div class="van-doc-simulator">
-    <iframe
+    <!-- <iframe
       src="https://vant-contrib.gitee.io/vant/v2/mobile.html?weapp=1"
       frameborder="0"
       style="height: 640px"
     >
-    </iframe>
+    </iframe> -->
   </div>
 </template>
 <script setup>

@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "node build/dev.mjs",
-    "dev:h5": "uni -p h5",
+    "dev:h5": "uni -p h5 -c src/vite.config.js",
     "lint": "npm run lint:script && npm run lint:style",
     "lint:script": "eslint --ext .js,.ts --fix --quiet ./packages",
     "lint:style": "stylelint --fix \"./packages/**/*.scss\"",
@@ -73,6 +73,7 @@
     "stylelint-prettier": "^4.1.0",
     "typescript": "^4.9.4",
     "vite": "4.0.3",
+    "vitepress": "1.0.0-rc.31",
     "vue": "^3.2.45",
     "vue-eslint-parser": "^9.3.2"
   }
