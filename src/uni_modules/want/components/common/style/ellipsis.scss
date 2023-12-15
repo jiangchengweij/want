@@ -1,7 +1,7 @@
-@import './mixins/ellipsis.scss';
+@import './mixins/ellipsis';
 
 .wan-ellipsis {
-  @include ellipsis();
+  @include ellipsis;
 }
 
 .wan-multi-ellipsis--l2 {

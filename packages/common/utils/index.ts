@@ -2,6 +2,7 @@ import { isDef, isNumber, isObj, isPlainObject, isPromise } from './validator';
 
 export * from './validator';
 export * from './bem';
+export * from './style';
 
 let systemInfo: UniApp.GetSystemInfoResult;
 

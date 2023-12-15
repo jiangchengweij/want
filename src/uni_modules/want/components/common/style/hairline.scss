@@ -1,4 +1,4 @@
-@import './mixins/hairline.scss';
+@import './mixins/hairline';
 
 .wan-hairline,
 .wan-hairline--top,
@@ -10,7 +10,7 @@
   position: relative;
 
   &::after {
-    @include hairline();
+    @include hairline;
   }
 }
 

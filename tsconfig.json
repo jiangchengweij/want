@@ -1,4 +1,5 @@
 {
+  "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
     "module": "es6",
     "esModuleInterop": true,

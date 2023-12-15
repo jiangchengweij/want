@@ -1,4 +1,4 @@
-import { reactive, watch } from 'vue';
+import { ExtractPropTypes, PropType, SetupContext, reactive, watch } from 'vue';
 import { toNumber, isObj } from '../utils/index';
 export const emits = [
   'enter',
