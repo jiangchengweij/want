@@ -47,7 +47,8 @@ $line-height-xs: 14px;
 $line-height-sm: 18px;
 $line-height-md: 20px;
 $line-height-lg: 22px;
-$base-font-family: -apple-system,
+$base-font-family:
+  -apple-system,
   blinkmacsystemfont,
   'Helvetica Neue',
   helvetica,
@@ -59,7 +60,8 @@ $base-font-family: -apple-system,
   'Hiragino Sans GB',
   'Microsoft Yahei',
   sans-serif;
-$price-integer-font-family: avenir-heavy,
+$price-integer-font-family:
+  avenir-heavy,
   pingfang sc,
   helvetica neue,
   arial,
@@ -308,7 +310,8 @@ $info-border-width: 1px;
 $info-background-color: $red;
 $info-dot-color: $red;
 $info-dot-size: 8px;
-$info-font-family: -apple-system-font,
+$info-font-family:
+  -apple-system-font,
   helvetica neue,
   arial,
   sans-serif;
@@ -416,7 +419,8 @@ $switch-height: 1em;
 $switch-node-size: 1em;
 $switch-node-z-index: 1;
 $switch-node-background-color: $white;
-$switch-node-box-shadow: 0 3px 1px 0 rgb(0 0 0 / 5%),
+$switch-node-box-shadow:
+  0 3px 1px 0 rgb(0 0 0 / 5%),
   0 2px 2px 0 rgb(0 0 0 / 10%),
   0 3px 3px 0 rgb(0 0 0 / 5%);
 $switch-background-color: $white;

@@ -1,18 +1,13 @@
 {
   "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
-    "module": "es6",
-    "esModuleInterop": true,
-    "target": "es6",
-    "declaration": true,
+    "sourceMap": true,
+    "lib": ["esnext", "dom"],
+    "types": ["@dcloudio/types"],
+    "isolatedModules": false,
     "noImplicitAny": false,
     "outDir": "dist",
-    "baseUrl": ".",
-    "strict": true,
-    "lib": ["ESNext", "dom"],
-    "moduleResolution": "node",
-    "types": ["@dcloudio/types"],
-    "skipLibCheck": true
+    "baseUrl": "."
   },
   "include": ["./packages/**/*.ts", "./packages/**/*.d.ts"]
 }

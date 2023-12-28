@@ -22,7 +22,7 @@ module.exports = (frontmatter) => {
         return prev + `* @value ${key} ${value ?? ''}\n`;
       }, '');
     }
-    if (arr[0] === 'example') return `* @example ${arr[1]}\n`;
+    if (arr[0] === 'example') return `* @${item}\n`;
   };
   const docStr =
     `/**\n` +

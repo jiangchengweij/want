@@ -94,3 +94,23 @@
     </demo-block>
   </view>
 </template>
+<script></script>
+
+<style>
+.row {
+  height: 44px;
+  margin-bottom: 15px;
+}
+
+.demo-margin-left {
+  margin-left: 10px;
+}
+
+.demo-margin-right {
+  margin-right: 10px;
+}
+
+.demo-margin-bottom {
+  margin-bottom: 15px;
+}
+</style>

@@ -1,4 +1,4 @@
-import { ExtractPropTypes, SetupContext } from 'vue';
+import type { ExtractPropTypes, SetupContext } from 'vue';
 
 export const emits = [
   'getuserinfo',

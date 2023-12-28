@@ -45,7 +45,7 @@
     @chooseavatar="onChooseAvatar"
   >
     <template v-if="loading">
-      <w-loading
+      <wan-loading
         :custom-class="loadingClass"
         :size="loadingSize"
         :type="loadingType"
@@ -75,7 +75,7 @@ import { setup, props, emits } from './index';
 * @value success 
 * @value warning 
 * @value danger 
-* @property {String} size type 默认:按钮尺寸
+* @property {String} size 按钮尺寸 默认:normal
 * @value normal 
 * @value large 
 * @value small 

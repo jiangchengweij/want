@@ -16,25 +16,25 @@ type ParentProvide = {
     child: ComponentInternalInstance
   ): (instance: ComponentInternalInstance) => void;
   unlink(child: ComponentInternalInstance): void;
-  children: ComponentPublicInstance[];
-  parentComponent: ComponentPublicInstance;
+  children: AnyObject[];
+  parentComponent: AnyObject;
 };
 
 export function useChildren(
   key: string,
   event: {
-    onLink?: () => void;
-    onUnLink?: <T = ComponentInternalInstance>(_: T) => void;
+    onLink?: (_: AnyObject) => void;
+    onUnLink?: <T = AnyObject>(_: T) => void;
   } = {}
 ) {
   const { onLink, onUnLink } = event;
-  const children = reactive<unknown[]>([]);
+  const children = reactive<AnyObject[]>([]);
 
   const parentComponent = getCurrentInstance();
 
   let _unmount = false;
 
-  const link = (child: ComponentInternalInstance) => {
+  const link = (child: AnyObject) => {
     children.push(child);
     if (onLink) {
       return onLink;
@@ -68,8 +68,15 @@ export function useChildren(
   };
 }
 
-export function useParent(key: InjectionKey<ParentProvide>, index?: number) {
-  const parent = inject(key, null);
+export function useParent(
+  key: string,
+  index?: number
+): {
+  parent: AnyObject | null;
+  index: number;
+  children: AnyObject[];
+} {
+  const parent = inject<ParentProvide | null>(key, null);
   const instance = getCurrentInstance()!;
 
   if (parent) {

@@ -1,10 +1,10 @@
-import type { ExtractPropTypes, SetupContext } from 'vue';
+import { computed, ExtractPropTypes, SetupContext } from 'vue';
 import {
   props as buttonProps,
   emits as buttonEmits,
   setup as buttonSetup
 } from '../common/mixins/button';
-import { bem } from '../common/utils';
+import { bem, style, addUnit } from '../common/utils';
 
 export const emits = ['click', ...buttonEmits] as const;
 
@@ -53,9 +53,48 @@ type Props = ExtractPropTypes<typeof props>;
 type Context = SetupContext<CanWrite<typeof emits>>;
 
 export const setup = (props: Props, context: Context) => {
+  const { emit } = context;
   const buttonSetupReturn = buttonSetup<Props, Context>(props, context);
+  const rootStyle = computed(() => {
+    const { customStyle, color } = props;
+    if (!color) {
+      return style(customStyle);
+    }
+    const styleObj: AnyObject = {
+      color: props.plain ? color : '#fff',
+      background: props.plain ? null : props.color
+    };
+    if (color?.indexOf('gradient') !== -1) {
+      styleObj.border = '0px';
+    } else {
+      styleObj['border-color'] = color;
+    }
+    return style([styleObj, customStyle]);
+  });
+
+  const loadingColor = computed(() => {
+    const { plain, color, type } = props;
+    if (plain) {
+      return color ? color : '#c9c9c9';
+    }
+
+    if (type) {
+      return '#c9c9c9';
+    }
+    return '#fff';
+  });
+
+  function onClick(event) {
+    if (props.disabled || props.loading) return;
+    emit('click', event);
+  }
   return {
     bem,
-    ...buttonSetupReturn
+    style,
+    addUnit,
+    ...buttonSetupReturn,
+    rootStyle,
+    loadingColor,
+    onClick
   };
 };

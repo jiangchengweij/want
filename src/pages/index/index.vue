@@ -17,7 +17,7 @@
           @tap="onClick(item.path)"
         >
           {{ item.title }}
-          <w-icon name="arrow" custom-class="demo-home-nav__icon" />
+          <wan-icon name="arrow" custom-class="demo-home-nav__icon" />
         </view>
       </view>
     </view>
@@ -29,18 +29,20 @@ import { onReady } from '@dcloudio/uni-app';
 import list from './config';
 
 onReady(() => {
-  // #ifdef MP-ALIPAY
-  setTimeout(() => {
-    uni.setNavigationBarColor({
-      backgroundColor: '#fff'
-    });
-  }, 100);
-  // #endif
+
 });
 
 function onClick(url) {
   uni.navigateTo({
     url: `/pages/components${url}/index`,
+		success() {
+			// #ifdef WEB
+			uni.pageScrollTo({
+				scrollTop: 0,
+				duration: 0
+			})
+			// #endif
+		}
   });
 }
 </script>

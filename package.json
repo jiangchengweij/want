@@ -23,10 +23,6 @@
     "./packages/**/*.{js,vue,ts}": [
       "npm run lint:script",
       "git add ."
-    ],
-    "./packages/**/*.scss": [
-      "npm run lint:style",
-      "git add ."
     ]
   },
   "devDependencies": {

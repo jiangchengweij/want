@@ -45,7 +45,7 @@
     @chooseavatar="onChooseAvatar"
   >
     <template v-if="loading">
-      <w-loading
+      <wan-loading
         :custom-class="loadingClass"
         :size="loadingSize"
         :type="loadingType"

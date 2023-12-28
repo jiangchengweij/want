@@ -1,4 +1,5 @@
-import { ExtractPropTypes, PropType, SetupContext, reactive, watch } from 'vue';
+import { reactive, watch } from 'vue';
+import type { ExtractPropTypes, SetupContext } from 'vue';
 import { toNumber, isObj } from '../utils/index';
 
 export const emits = [
@@ -10,15 +11,13 @@ export const emits = [
   'after-enter'
 ];
 
-type Duration = number | { enter: number; leave: number };
-
 export const props = {
   show: {
     type: Boolean,
     default: false
   },
   duration: {
-    type: [String, Number, Object] as PropType<Duration>,
+    type: [String, Number, Object],
     default: 300
   },
   name: {

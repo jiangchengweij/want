@@ -1,0 +1,18 @@
+@use 'sass:math';
+
+.wan-col {
+  box-sizing: border-box;
+}
+
+@mixin generate($n) {
+  @for $i from 1 through $n {
+    .wan-col--#{$i} {
+      width: $i * math.div(100%, 24);
+    }
+    .wan-col--offset-#{$i} {
+      margin-left: $i * math.div(100%, 24);
+    }
+  }
+}
+
+@include generate(24);

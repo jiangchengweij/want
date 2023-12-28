@@ -1,0 +1,204 @@
+@import '../common/style/var.scss';
+
+.wan-popup {
+  position: fixed;
+  box-sizing: border-box;
+  max-height: 100%;
+  overflow-y: auto;
+  transition-timing-function: ease;
+  animation: ease both;
+  -webkit-overflow-scrolling: touch;
+  background-color: var(--popup-background-color, $popup-background-color);
+
+  &--center {
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+
+    &.wan-popup--round {
+      border-radius: var(
+        --popup-round-border-radius,
+        $popup-round-border-radius
+      );
+    }
+  }
+
+  &--top {
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    &.wan-popup--round {
+      border-radius: 0 0
+        var(
+          --popup-round-border-radius,
+          var(--popup-round-border-radius, $popup-round-border-radius)
+        )
+        var(
+          --popup-round-border-radius,
+          var(--popup-round-border-radius, $popup-round-border-radius)
+        );
+    }
+  }
+
+  &--right {
+    top: 50%;
+    right: 0;
+    transform: translate3d(0, -50%, 0);
+
+    &.wan-popup--round {
+      border-radius: var(
+          --popup-round-border-radius,
+          var(--popup-round-border-radius, $popup-round-border-radius)
+        )
+        0 0
+        var(
+          --popup-round-border-radius,
+          var(--popup-round-border-radius, $popup-round-border-radius)
+        );
+    }
+  }
+
+  &--bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    &.wan-popup--round {
+      border-radius: var(
+          --popup-round-border-radius,
+          var(--popup-round-border-radius, $popup-round-border-radius)
+        )
+        var(
+          --popup-round-border-radius,
+          var(--popup-round-border-radius, $popup-round-border-radius)
+        )
+        0 0;
+    }
+  }
+
+  &--left {
+    top: 50%;
+    left: 0;
+    transform: translate3d(0, -50%, 0);
+
+    &.wan-popup--round {
+      border-radius: 0
+        var(
+          --popup-round-border-radius,
+          var(--popup-round-border-radius, $popup-round-border-radius)
+        )
+        var(
+          --popup-round-border-radius,
+          var(--popup-round-border-radius, $popup-round-border-radius)
+        )
+        0;
+    }
+  }
+
+  &--bottom.wan-popup--safe {
+    padding-bottom: var(--window-bottom);
+  }
+
+  &--bottom.wan-popup--safeTabBar,
+  &--top.wan-popup--safeTabBar {
+    bottom: var(--tabbar-height, $tabbar-height);
+  }
+
+  &--safeTop {
+    padding-top: var(--window-top);
+  }
+
+  &__close-icon {
+    position: absolute;
+    z-index: var(--popup-close-icon-z-index, $popup-close-icon-z-index);
+    color: var(--popup-close-icon-color, $popup-close-icon-color);
+    font-size: var(--popup-close-icon-size, $popup-close-icon-size);
+
+    &--top-left {
+      top: var(--popup-close-icon-margin, $popup-close-icon-margin);
+      left: var(--popup-close-icon-margin, $popup-close-icon-margin);
+    }
+
+    &--top-right {
+      top: var(--popup-close-icon-margin, $popup-close-icon-margin);
+      right: var(--popup-close-icon-margin, $popup-close-icon-margin);
+    }
+
+    &--bottom-left {
+      bottom: var(--popup-close-icon-margin, $popup-close-icon-margin);
+      left: var(--popup-close-icon-margin, $popup-close-icon-margin);
+    }
+
+    &--bottom-right {
+      right: var(--popup-close-icon-margin, $popup-close-icon-margin);
+      bottom: var(--popup-close-icon-margin, $popup-close-icon-margin);
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+}
+
+.wan-scale-enter-active,
+.wan-scale-leave-active {
+  transition-property: opacity, transform;
+}
+
+.wan-scale-enter,
+.wan-scale-leave-to {
+  transform: translate3d(-50%, -50%, 0) scale(0.7);
+  opacity: 0;
+}
+
+.wan-fade-enter-active,
+.wan-fade-leave-active {
+  transition-property: opacity;
+}
+
+.wan-fade-enter,
+.wan-fade-leave-to {
+  opacity: 0;
+}
+
+.wan-center-enter-active,
+.wan-center-leave-active {
+  transition-property: opacity;
+}
+
+.wan-center-enter,
+.wan-center-leave-to {
+  opacity: 0;
+}
+
+.wan-bottom-enter-active,
+.wan-bottom-leave-active,
+.wan-top-enter-active,
+.wan-top-leave-active,
+.wan-left-enter-active,
+.wan-left-leave-active,
+.wan-right-enter-active,
+.wan-right-leave-active {
+  transition-property: transform;
+}
+
+.wan-bottom-enter,
+.wan-bottom-leave-to {
+  transform: translate3d(0, 100%, 0);
+}
+
+.wan-top-enter,
+.wan-top-leave-to {
+  transform: translate3d(0, -100%, 0);
+}
+
+.wan-left-enter,
+.wan-left-leave-to {
+  transform: translate3d(-100%, -50%, 0);
+}
+
+.wan-right-enter,
+.wan-right-leave-to {
+  transform: translate3d(100%, -50%, 0);
+}

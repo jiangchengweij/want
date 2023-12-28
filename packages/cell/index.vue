@@ -18,7 +18,7 @@
     @tap="onClick"
   >
     <view v-if="icon" class="wan-cell__left-icon-wrap">
-      <w-icon :name="icon" custom-class="wan-cell__left-icon"></w-icon>
+      <wan-icon :name="icon" custom-class="wan-cell__left-icon"></wan-icon>
     </view>
     <slot v-else name="icon" />
     <view
@@ -38,7 +38,7 @@
       <template v-if="value || value === 0">{{ value }}</template>
       <slot v-else />
     </view>
-    <w-icon
+    <wan-icon
       v-if="isLink"
       :name="arrowDirection ? 'arrow' + '-' + arrowDirection : 'arrow'"
       class="wan-cell__right-icon-wrap"

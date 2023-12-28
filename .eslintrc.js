@@ -35,5 +35,8 @@ module.exports = {
     'vue/multi-word-component-names': 'off',
     'no-unused-vars': 'warn',
     '@typescript-eslint/no-unused-vars': 'warn'
+  },
+  globals: {
+    uni: 'readonly'
   }
 };

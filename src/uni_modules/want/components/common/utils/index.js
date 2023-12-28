@@ -1,6 +1,7 @@
 import { isDef, isNumber, isObj, isPlainObject, isPromise } from './validator';
 export * from './validator';
 export * from './bem';
+export * from './style';
 let systemInfo;
 export function getSystemInfoSync() {
   if (systemInfo == null) {
@@ -62,7 +63,7 @@ export function toPromise(promiseLike) {
 }
 // 浮点数精度处理
 export function addNumber(num1, num2) {
-  const cardinal = Math.pow(10, 10);
+  const cardinal = 10 ** 10;
   return Math.round((num1 + num2) * cardinal) / cardinal;
 }
 //转换任何位数字

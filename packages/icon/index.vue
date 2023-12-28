@@ -1,6 +1,6 @@
 <template>
   <view :class="rootClass" :style="rootStyle" @tap="onClick">
-    <w-info
+    <wan-info
       v-if="info != null || dot"
       :dot="dot"
       :info="info"

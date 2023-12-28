@@ -1,4 +1,3 @@
-import { ExtractPropTypes, SetupContext } from 'vue';
 export const emits = [
   'getuserinfo',
   'contact',

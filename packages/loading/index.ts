@@ -17,7 +17,6 @@ type Props = ExtractPropTypes<typeof props>;
 
 export const setup = (props: Props) => {
   const array12 = Array.from({ length: 12 });
-
   const spinnerStyle = computed(() => {
     const { color, size } = props;
     return style({
@@ -29,8 +28,9 @@ export const setup = (props: Props) => {
 
   return {
     bem,
-    array12,
+    addUnit,
     style,
+    array12,
     spinnerStyle
   };
 };

@@ -84,30 +84,30 @@ const copier = (dist, ext) =>
   function copy() {
     const srcPath = [`${src}/**/*.${ext}`];
     srcPath.push(`!${src}/**/demo/**/*.${ext}`);
-    if (ext === 'vue') {
-      return merge2(
-        gulp
-          .src(srcPath)
-          .pipe(addJsDoc())
-          .pipe(fileRename())
-          .pipe(replace('<script lang="ts">', '<script>'))
-          .pipe(gulp.dest(dist)),
-        gulp
-          .src([`${src}/**/demo/**/*.${ext}`])
-          .pipe(
-            rename((path) => {
-              path.dirname = path.dirname.replace('\\demo', '');
-            })
-          )
-          .pipe(gulp.dest(examplePagesDir))
-      );
-    }
-    return gulp.src(srcPath).pipe(fileRename()).pipe(gulp.dest(dist));
+    return merge2(
+      ext === 'vue'
+        ? gulp
+            .src(srcPath)
+            .pipe(addJsDoc())
+            .pipe(fileRename())
+            .pipe(replace('<script lang="ts">', '<script>'))
+            .pipe(gulp.dest(dist))
+        : gulp.src(srcPath).pipe(fileRename()).pipe(gulp.dest(dist)),
+      gulp
+        .src([`${src}/**/demo/**/*.${ext}`])
+        .pipe(
+          rename((path) => {
+            path.dirname = path.dirname.replace('\\demo', '');
+          })
+        )
+        .pipe(gulp.dest(examplePagesDir))
+    );
   };
 
 const staticCopier = (dist) =>
   gulp.parallel(
     copier(dist, 'vue'),
+    copier(dist, 'js'),
     copier(dist, 'json'),
     copier(dist, 'scss')
   );
@@ -123,11 +123,13 @@ tasks.buildExample = gulp.series(
   cleaner(srcDistDir),
   gulp.parallel(
     tsCompiler(srcDistDir, srcConfig),
-    staticCopier(srcDistDir)
-    // () => {
-    //   gulp.watch(`${src}/**/*.vue`, copier(exampleDistDir, "vue"));
-    //   gulp.watch(`${src}/**/*.scss`, copier(exampleDistDir, "scss"));
-    // }
+    staticCopier(srcDistDir),
+    () => {
+      gulp.watch(`../packages/**/*.ts`, tsCompiler(srcDistDir, srcConfig));
+      gulp.watch(`../packages/**/*.vue`, copier(srcDistDir, 'vue'));
+      gulp.watch(`../packages/**/*.js`, copier(srcDistDir, 'js'));
+      gulp.watch(`../packages/**/*.scss`, copier(srcDistDir, 'scss'));
+    }
   )
 );
 

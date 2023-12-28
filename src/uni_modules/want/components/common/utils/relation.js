@@ -1,7 +1,4 @@
 import {
-  ComponentInternalInstance,
-  ComponentPublicInstance,
-  InjectionKey,
   getCurrentInstance,
   inject,
   onBeforeMount,

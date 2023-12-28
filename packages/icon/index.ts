@@ -24,6 +24,7 @@ export type Context = SetupContext<CanWrite<typeof emits>>;
 
 export const setup = (props: Props, context: Context) => {
   const { emit } = context;
+
   function isImage(name?: string) {
     return name && name.indexOf('/') !== -1;
   }
@@ -65,6 +66,7 @@ export const setup = (props: Props, context: Context) => {
     addUnit,
     rootClass,
     rootStyle,
+    isImage,
     onClick
   };
 };
