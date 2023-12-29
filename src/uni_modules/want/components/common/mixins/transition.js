@@ -1,5 +1,5 @@
 import { reactive, watch } from 'vue';
-import { toNumber, isObj } from '../utils/index';
+import { toNumber, isObj, requestAnimationFrame } from '../utils/index';
 export const emits = [
   'enter',
   'leave',

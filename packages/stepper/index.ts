@@ -1,4 +1,11 @@
-import { computed, ExtractPropTypes, reactive, SetupContext, watch } from 'vue';
+import {
+  computed,
+  ExtractPropTypes,
+  onMounted,
+  reactive,
+  SetupContext,
+  watch
+} from 'vue';
 import { bem, addUnit, style, isDef } from '../common/utils';
 
 export const emits = [
@@ -86,8 +93,7 @@ export function setup(props: Props, context: Context) {
       if (newVal !== state.innterValue) {
         state.innterValue = format(newVal);
       }
-    },
-    { immediate: true }
+    }
   );
 
   watch(
@@ -95,8 +101,13 @@ export function setup(props: Props, context: Context) {
     () => {
       check();
     },
-    { immediate: true, deep: true }
+    { deep: true }
   );
+
+  onMounted(() => {
+    state.innterValue = format(props.modelValue);
+    check();
+  });
 
   const buttonStyle = computed(() => {
     return style({

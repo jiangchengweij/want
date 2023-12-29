@@ -1,4 +1,4 @@
-import { computed, reactive, watch } from 'vue';
+import { computed, onMounted, reactive, watch } from 'vue';
 import { bem, addUnit, style, isDef } from '../common/utils';
 export const emits = [
   'change',
@@ -74,16 +74,19 @@ export function setup(props, context) {
       if (newVal !== state.innterValue) {
         state.innterValue = format(newVal);
       }
-    },
-    { immediate: true }
+    }
   );
   watch(
     () => [props.integer, props.decimalLength, props.min, props.max],
     () => {
       check();
     },
-    { immediate: true, deep: true }
+    { deep: true }
   );
+  onMounted(() => {
+    state.innterValue = format(props.modelValue);
+    check();
+  });
   const buttonStyle = computed(() => {
     return style({
       width: addUnit(props.buttonSize),

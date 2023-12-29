@@ -229,12 +229,12 @@
     //     "navigationBarTitleText": "Circle 进度条"
     //   }
     // },
-    // {
-    //   "path": "pages/components/calendar/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Calendar 日历"
-    //   }
-    // },
+    {
+      "path": "pages/components/calendar/index",
+      "style": {
+        "navigationBarTitleText": "Calendar 日历"
+      }
+    },
     // {
     //   "path": "pages/components/cascader/index",
     //   "style": {
@@ -271,30 +271,30 @@
         "navigationBarTitleText": "ConfigProvider 全局配置"
       }
     },
-    // {
-    //   "path": "pages/components/stepper/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Stepper 步进器"
-    //   }
-    // },
-    // {
-    //   "path": "pages/components/picker/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Picker 选择器"
-    //   }
-    // },
-    // {
-    //   "path": "pages/components/datetime-picker/index",
-    //   "style": {
-    //     "navigationBarTitleText": "DatetimePicker 时间选择"
-    //   }
-    // },
-    // {
-    //   "path": "pages/components/uploader/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Uploader 文件上传"
-    //   }
-    // },
+    {
+      "path": "pages/components/stepper/index",
+      "style": {
+        "navigationBarTitleText": "Stepper 步进器"
+      }
+    },
+    {
+      "path": "pages/components/picker/index",
+      "style": {
+        "navigationBarTitleText": "Picker 选择器"
+      }
+    },
+    {
+      "path": "pages/components/datetime-picker/index",
+      "style": {
+        "navigationBarTitleText": "DatetimePicker 时间选择"
+      }
+    },
+    {
+      "path": "pages/components/uploader/index",
+      "style": {
+        "navigationBarTitleText": "Uploader 文件上传"
+      }
+    },
     // {
     //   "path": "pages/components/nav-bar/index",
     //   "style": {
