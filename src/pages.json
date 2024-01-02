@@ -49,24 +49,24 @@
         "navigationBarTitleText": "Transition 动画"
       }
     },
-    // {
-    //   "path": "pages/components/overlay/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Overlay 遮罩层"
-    //   }
-    // },
+    {
+      "path": "pages/components/overlay/index",
+      "style": {
+        "navigationBarTitleText": "Overlay 遮罩层"
+      }
+    },
     {
       "path": "pages/components/popup/index",
       "style": {
         "navigationBarTitleText": "Popup 弹出层"
       }
     },
-    // {
-    //   "path": "pages/components/tag/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Tag 标签"
-    //   }
-    // },
+    {
+      "path": "pages/components/tag/index",
+      "style": {
+        "navigationBarTitleText": "Tag 标签"
+      }
+    },
     {
       "path": "pages/components/sticky/index",
       "style": {
@@ -91,12 +91,12 @@
         "navigationBarTitleText": "Tab 标签页"
       }
     },
-    // {
-    //   "path": "pages/components/notify/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Notify 消息通知"
-    //   }
-    // },
+    {
+      "path": "pages/components/notify/index",
+      "style": {
+        "navigationBarTitleText": "Notify 消息通知"
+      }
+    },
     // {
     //   "path": "pages/components/skeleton/index",
     //   "style": {
@@ -133,18 +133,18 @@
     //     "navigationBarTitleText": "Collapse 折叠面板"
     //   }
     // },
-    // {
-    //   "path": "pages/components/action-sheet/index",
-    //   "style": {
-    //     "navigationBarTitleText": "ActionSheet 动作面板"
-    //   }
-    // },
-    // {
-    //   "path": "pages/components/share-sheet/index",
-    //   "style": {
-    //     "navigationBarTitleText": "ShareSheet 分享面板"
-    //   }
-    // },
+    {
+      "path": "pages/components/action-sheet/index",
+      "style": {
+        "navigationBarTitleText": "ActionSheet 动作面板"
+      }
+    },
+    {
+      "path": "pages/components/share-sheet/index",
+      "style": {
+        "navigationBarTitleText": "ShareSheet 分享面板"
+      }
+    },
     // {
     //   "path": "pages/components/progress/index",
     //   "style": {
@@ -163,12 +163,12 @@
     //     "navigationBarTitleText": "Empty 空状态"
     //   }
     // },
-    // {
-    //   "path": "pages/components/search/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Search 搜索"
-    //   }
-    // },
+    {
+      "path": "pages/components/search/index",
+      "style": {
+        "navigationBarTitleText": "Search 搜索"
+      }
+    },
     // {
     //   "path": "pages/components/steps/index",
     //   "style": {
@@ -193,12 +193,12 @@
     //     "navigationBarTitleText": "Tabbar 标签栏"
     //   }
     // },
-    // {
-    //   "path": "pages/components/dropdown-menu/index",
-    //   "style": {
-    //     "navigationBarTitleText": "DropdownMenu 下拉菜单"
-    //   }
-    // },
+    {
+      "path": "pages/components/dropdown-menu/index",
+      "style": {
+        "navigationBarTitleText": "DropdownMenu 下拉菜单"
+      }
+    },
     // {
     //   "path": "pages/components/index-bar/index",
     //   "style": {
@@ -235,12 +235,12 @@
         "navigationBarTitleText": "Calendar 日历"
       }
     },
-    // {
-    //   "path": "pages/components/cascader/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Cascader 级联选择"
-    //   }
-    // },
+    {
+      "path": "pages/components/cascader/index",
+      "style": {
+        "navigationBarTitleText": "Cascader 级联选择"
+      }
+    },
     {
       "path": "pages/components/checkbox/index",
       "style": {

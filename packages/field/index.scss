@@ -69,11 +69,12 @@
       );
     }
 
-    &--readonly,
-    &--disabled {
-      /* #ifdef H5 */
+    &--readonly {
       pointer-events: none;
-      /* #endif */
+    }
+
+    &--disabled {
+      pointer-events: none;
     }
 
     &--center {

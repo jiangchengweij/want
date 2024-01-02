@@ -33,27 +33,30 @@
           scroll-y
           :scroll-into-view="state.scrollIntoView"
         >
-          <wan-calendar-month
+          <view
             v-for="(item, index) in months"
             :id="`month${index}`"
             :key="index"
             class="month"
-            :date="item"
             :data-date="item"
-            :type="type"
-            :color="color"
-            :min-date="minDate"
-            :max-date="maxDate"
-            :show-mark="showMark"
-            :formatter="formatter"
-            :row-height="rowHeight"
-            :current-date="state.currentDate"
-            :show-subtitle="showSubtitle"
-            :allow-same-day="allowSameDay"
-            :show-month-title="index !== 0 || !showSubtitle"
-            :first-day-of-week="firstDayOfWeek"
-            @click="onClickDay"
-          />
+          >
+            <wan-calendar-month
+              :date="item"
+              :type="type"
+              :color="color"
+              :min-date="minDate"
+              :max-date="maxDate"
+              :show-mark="showMark"
+              :formatter="formatter"
+              :row-height="rowHeight"
+              :current-date="state.currentDate"
+              :show-subtitle="showSubtitle"
+              :allow-same-day="allowSameDay"
+              :show-month-title="index !== 0 || !showSubtitle"
+              :first-day-of-week="firstDayOfWeek"
+              @click="onClickDay"
+            />
+          </view>
         </scroll-view>
         <view :class="[bem('calendar__footer', { safeAreaInsetBottom })]">
           <slot name="footer"></slot>
@@ -93,27 +96,30 @@
         scroll-y
         :scroll-into-view="state.scrollIntoView"
       >
-        <wan-calendar-month
+        <view
           v-for="(item, index) in months"
           :id="`month${index}`"
           :key="index"
-          class="month"
-          :date="item"
           :data-date="item"
-          :type="type"
-          :color="color"
-          :min-date="minDate"
-          :max-date="maxDate"
-          :show-mark="showMark"
-          :formatter="formatter"
-          :row-height="rowHeight"
-          :current-date="state.currentDate"
-          :show-subtitle="showSubtitle"
-          :allow-same-day="allowSameDay"
-          :show-month-title="index !== 0 || !showSubtitle"
-          :first-day-of-week="firstDayOfWeek"
-          @click="onClickDay"
-        />
+          class="month"
+        >
+          <wan-calendar-month
+            :date="item"
+            :type="type"
+            :color="color"
+            :min-date="minDate"
+            :max-date="maxDate"
+            :show-mark="showMark"
+            :formatter="formatter"
+            :row-height="rowHeight"
+            :current-date="state.currentDate"
+            :show-subtitle="showSubtitle"
+            :allow-same-day="allowSameDay"
+            :show-month-title="index !== 0 || !showSubtitle"
+            :first-day-of-week="firstDayOfWeek"
+            @click="onClickDay"
+          />
+        </view>
       </scroll-view>
       <view :class="[bem('calendar__footer', { safeAreaInsetBottom })]">
         <slot name="footer"></slot>

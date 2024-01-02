@@ -8,7 +8,7 @@ import {
   unref,
   watch
 } from 'vue';
-import { bem, addUnit, style } from '../common/utils';
+import { bem, addUnit, style, requestAnimationFrame } from '../common/utils';
 import {
   ROW_HEIGHT,
   getPrevDay,
@@ -149,7 +149,7 @@ export function setup(props, context) {
   watch(
     () => props.show,
     () => {
-      if (props.show) {
+      if (props.show && props.poppable) {
         initRect();
         scrollIntoView();
       }

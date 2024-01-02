@@ -11,7 +11,7 @@ import {
   unref,
   watch
 } from 'vue';
-import { bem, addUnit, style } from '../common/utils';
+import { bem, addUnit, style, requestAnimationFrame } from '../common/utils';
 import {
   ROW_HEIGHT,
   getPrevDay,
@@ -165,7 +165,7 @@ export function setup(
   watch(
     () => props.show,
     () => {
-      if (props.show) {
+      if (props.show && props.poppable) {
         initRect();
         scrollIntoView();
       }
@@ -328,15 +328,12 @@ export function setup(
       if (!targetDate || !displayed) {
         return;
       }
-
       const months = getMonths(minDate, maxDate);
-
       months.some((month, index) => {
         if (compareMonth(month, targetDate) === 0) {
           state.scrollIntoView = `month${index}`;
           return true;
         }
-
         return false;
       });
     });

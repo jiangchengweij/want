@@ -37,7 +37,9 @@ export const props = {
   },
   allowSameDay: Boolean,
   showSubtitle: Boolean,
-  showMonthTitle: Boolean
+  showMonthTitle: Boolean,
+  id: String,
+  customClass: null
 };
 export function setup(props, context) {
   const { emit } = context;

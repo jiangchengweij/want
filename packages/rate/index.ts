@@ -60,7 +60,7 @@ export function setup(
     () => props.modelValue,
     (newVal) => {
       if (newVal !== state.innerValue) {
-        state.innerValue = newVal ?? 0;
+        state.innerValue = newVal || 0;
       }
     },
     { immediate: true }

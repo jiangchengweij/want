@@ -1,5 +1,10 @@
 <template>
-  <view class="wan-calendar__month" :style="getMonthStyle">
+  <view
+    :id="id"
+    class="wan-calendar__month"
+    :class="customClass || ''"
+    :style="getMonthStyle"
+  >
     <view v-if="showMonthTitle" class="wan-calendar__month-title">
       {{ getFormatMonthTitle }}
     </view>
