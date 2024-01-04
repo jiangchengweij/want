@@ -1,0 +1,16 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    "module": "es6",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "target": "es6",
+    "lib": ["ESNext", "dom"],
+    "types": ["@dcloudio/types"],
+    "isolatedModules": false,
+    "noImplicitAny": false,
+    "outDir": "dist",
+    "baseUrl": "."
+  },
+  "include": ["./packages/**/*.ts", "./packages/**/*.d.ts"]
+}

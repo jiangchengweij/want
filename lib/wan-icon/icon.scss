@@ -1,0 +1,1011 @@
+@font-face {
+  font-family: wan-icon;
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url('https://at.alicdn.com/t/font_2553510_iv4v8nulyz.woff2?t=1649083952952')
+      format('woff2'),
+    url('https://at.alicdn.com/t/font_2553510_iv4v8nulyz.woff?t=1649083952952')
+      format('woff'),
+    url('https://at.alicdn.com/t/font_2553510_iv4v8nulyz.ttf?t=1649083952952')
+      format('truetype');
+  font-display: auto;
+}
+
+.wan-icon {
+  position: relative;
+  display: inline-block;
+  font: normal normal normal 14px/1;
+  font-family: wan-icon;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+
+  &::before {
+    display: inline-block;
+  }
+}
+
+.wan-icon-exchange::before {
+  content: '\e6af';
+}
+
+.wan-icon-eye::before {
+  content: '\e6b0';
+}
+
+.wan-icon-enlarge::before {
+  content: '\e6b1';
+}
+
+.wan-icon-expand-o::before {
+  content: '\e6b2';
+}
+
+.wan-icon-eye-o::before {
+  content: '\e6b3';
+}
+
+.wan-icon-expand::before {
+  content: '\e6b4';
+}
+
+.wan-icon-filter-o::before {
+  content: '\e6b5';
+}
+
+.wan-icon-fire::before {
+  content: '\e6b6';
+}
+
+.wan-icon-fail::before {
+  content: '\e6b7';
+}
+
+.wan-icon-failure::before {
+  content: '\e6b8';
+}
+
+.wan-icon-fire-o::before {
+  content: '\e6b9';
+}
+
+.wan-icon-flag-o::before {
+  content: '\e6ba';
+}
+
+.wan-icon-font::before {
+  content: '\e6bb';
+}
+
+.wan-icon-font-o::before {
+  content: '\e6bc';
+}
+
+.wan-icon-gem-o::before {
+  content: '\e6bd';
+}
+
+.wan-icon-flower-o::before {
+  content: '\e6be';
+}
+
+.wan-icon-gem::before {
+  content: '\e6bf';
+}
+
+.wan-icon-gift-card::before {
+  content: '\e6c0';
+}
+
+.wan-icon-friends::before {
+  content: '\e6c1';
+}
+
+.wan-icon-friends-o::before {
+  content: '\e6c2';
+}
+
+.wan-icon-gold-coin::before {
+  content: '\e6c3';
+}
+
+.wan-icon-gold-coin-o::before {
+  content: '\e6c4';
+}
+
+.wan-icon-good-job-o::before {
+  content: '\e6c5';
+}
+
+.wan-icon-gift::before {
+  content: '\e6c6';
+}
+
+.wan-icon-gift-o::before {
+  content: '\e6c7';
+}
+
+.wan-icon-gift-card-o::before {
+  content: '\e6c8';
+}
+
+.wan-icon-good-job::before {
+  content: '\e6c9';
+}
+
+.wan-icon-home-o::before {
+  content: '\e6ca';
+}
+
+.wan-icon-goods-collect::before {
+  content: '\e6cb';
+}
+
+.wan-icon-graphic::before {
+  content: '\e6cc';
+}
+
+.wan-icon-goods-collect-o::before {
+  content: '\e6cd';
+}
+
+.wan-icon-hot-o::before {
+  content: '\e6ce';
+}
+
+.wan-icon-info::before {
+  content: '\e6cf';
+}
+
+.wan-icon-hotel-o::before {
+  content: '\e6d0';
+}
+
+.wan-icon-info-o::before {
+  content: '\e6d1';
+}
+
+.wan-icon-hot-sale-o::before {
+  content: '\e6d2';
+}
+
+.wan-icon-hot::before {
+  content: '\e6d3';
+}
+
+.wan-icon-like::before {
+  content: '\e6d4';
+}
+
+.wan-icon-idcard::before {
+  content: '\e6d5';
+}
+
+.wan-icon-invitation::before {
+  content: '\e6d6';
+}
+
+.wan-icon-like-o::before {
+  content: '\e6d7';
+}
+
+.wan-icon-hot-sale::before {
+  content: '\e6d8';
+}
+
+.wan-icon-location-o::before {
+  content: '\e6d9';
+}
+
+.wan-icon-location::before {
+  content: '\e6da';
+}
+
+.wan-icon-label::before {
+  content: '\e6db';
+}
+
+.wan-icon-lock::before {
+  content: '\e6dc';
+}
+
+.wan-icon-label-o::before {
+  content: '\e6dd';
+}
+
+.wan-icon-map-marked::before {
+  content: '\e6de';
+}
+
+.wan-icon-logistics::before {
+  content: '\e6df';
+}
+
+.wan-icon-manager::before {
+  content: '\e6e0';
+}
+
+.wan-icon-more::before {
+  content: '\e6e1';
+}
+
+.wan-icon-live::before {
+  content: '\e6e2';
+}
+
+.wan-icon-manager-o::before {
+  content: '\e6e3';
+}
+
+.wan-icon-medal::before {
+  content: '\e6e4';
+}
+
+.wan-icon-more-o::before {
+  content: '\e6e5';
+}
+
+.wan-icon-music-o::before {
+  content: '\e6e6';
+}
+
+.wan-icon-music::before {
+  content: '\e6e7';
+}
+
+.wan-icon-new-arrival-o::before {
+  content: '\e6e8';
+}
+
+.wan-icon-medal-o::before {
+  content: '\e6e9';
+}
+
+.wan-icon-new-o::before {
+  content: '\e6ea';
+}
+
+.wan-icon-free-postage::before {
+  content: '\e6eb';
+}
+
+.wan-icon-newspaper-o::before {
+  content: '\e6ec';
+}
+
+.wan-icon-new-arrival::before {
+  content: '\e6ed';
+}
+
+.wan-icon-minus::before {
+  content: '\e6ee';
+}
+
+.wan-icon-orders-o::before {
+  content: '\e6ef';
+}
+
+.wan-icon-new::before {
+  content: '\e6f0';
+}
+
+.wan-icon-paid::before {
+  content: '\e6f1';
+}
+
+.wan-icon-notes-o::before {
+  content: '\e6f2';
+}
+
+.wan-icon-other-pay::before {
+  content: '\e6f3';
+}
+
+.wan-icon-pause-circle::before {
+  content: '\e6f4';
+}
+
+.wan-icon-pause::before {
+  content: '\e6f5';
+}
+
+.wan-icon-pause-circle-o::before {
+  content: '\e6f6';
+}
+
+.wan-icon-peer-pay::before {
+  content: '\e6f7';
+}
+
+.wan-icon-pending-payment::before {
+  content: '\e6f8';
+}
+
+.wan-icon-passed::before {
+  content: '\e6f9';
+}
+
+.wan-icon-plus::before {
+  content: '\e6fa';
+}
+
+.wan-icon-phone-circle-o::before {
+  content: '\e6fb';
+}
+
+.wan-icon-phone-o::before {
+  content: '\e6fc';
+}
+
+.wan-icon-printer::before {
+  content: '\e6fd';
+}
+
+.wan-icon-photo-fail::before {
+  content: '\e6fe';
+}
+
+.wan-icon-phone::before {
+  content: '\e6ff';
+}
+
+.wan-icon-photo-o::before {
+  content: '\e700';
+}
+
+.wan-icon-play-circle::before {
+  content: '\e701';
+}
+
+.wan-icon-play::before {
+  content: '\e702';
+}
+
+.wan-icon-phone-circle::before {
+  content: '\e703';
+}
+
+.wan-icon-point-gift-o::before {
+  content: '\e704';
+}
+
+.wan-icon-point-gift::before {
+  content: '\e705';
+}
+
+.wan-icon-play-circle-o::before {
+  content: '\e706';
+}
+
+.wan-icon-shrink::before {
+  content: '\e707';
+}
+
+.wan-icon-photo::before {
+  content: '\e708';
+}
+
+.wan-icon-qr::before {
+  content: '\e709';
+}
+
+.wan-icon-qr-invalid::before {
+  content: '\e70a';
+}
+
+.wan-icon-question-o::before {
+  content: '\e70b';
+}
+
+.wan-icon-revoke::before {
+  content: '\e70c';
+}
+
+.wan-icon-replay::before {
+  content: '\e70d';
+}
+
+.wan-icon-service::before {
+  content: '\e70e';
+}
+
+.wan-icon-question::before {
+  content: '\e70f';
+}
+
+.wan-icon-search::before {
+  content: '\e710';
+}
+
+.wan-icon-refund-o::before {
+  content: '\e711';
+}
+
+.wan-icon-service-o::before {
+  content: '\e712';
+}
+
+.wan-icon-scan::before {
+  content: '\e713';
+}
+
+.wan-icon-share::before {
+  content: '\e714';
+}
+
+.wan-icon-send-gift-o::before {
+  content: '\e715';
+}
+
+.wan-icon-share-o::before {
+  content: '\e716';
+}
+
+.wan-icon-setting::before {
+  content: '\e717';
+}
+
+.wan-icon-points::before {
+  content: '\e718';
+}
+
+.wan-icon-photograph::before {
+  content: '\e719';
+}
+
+.wan-icon-shop::before {
+  content: '\e71a';
+}
+
+.wan-icon-shop-o::before {
+  content: '\e71b';
+}
+
+.wan-icon-shop-collect-o::before {
+  content: '\e71c';
+}
+
+.wan-icon-shop-collect::before {
+  content: '\e71d';
+}
+
+.wan-icon-smile::before {
+  content: '\e71e';
+}
+
+.wan-icon-shopping-cart-o::before {
+  content: '\e71f';
+}
+
+.wan-icon-sign::before {
+  content: '\e720';
+}
+
+.wan-icon-sort::before {
+  content: '\e721';
+}
+
+.wan-icon-star-o::before {
+  content: '\e722';
+}
+
+.wan-icon-smile-comment-o::before {
+  content: '\e723';
+}
+
+.wan-icon-stop::before {
+  content: '\e724';
+}
+
+.wan-icon-stop-circle-o::before {
+  content: '\e725';
+}
+
+.wan-icon-smile-o::before {
+  content: '\e726';
+}
+
+.wan-icon-star::before {
+  content: '\e727';
+}
+
+.wan-icon-success::before {
+  content: '\e728';
+}
+
+.wan-icon-stop-circle::before {
+  content: '\e729';
+}
+
+.wan-icon-records::before {
+  content: '\e72a';
+}
+
+.wan-icon-shopping-cart::before {
+  content: '\e72b';
+}
+
+.wan-icon-tosend::before {
+  content: '\e72c';
+}
+
+.wan-icon-todo-list::before {
+  content: '\e72d';
+}
+
+.wan-icon-thumb-circle-o::before {
+  content: '\e72e';
+}
+
+.wan-icon-thumb-circle::before {
+  content: '\e72f';
+}
+
+.wan-icon-umbrella-circle::before {
+  content: '\e730';
+}
+
+.wan-icon-underway::before {
+  content: '\e731';
+}
+
+.wan-icon-upgrade::before {
+  content: '\e732';
+}
+
+.wan-icon-todo-list-o::before {
+  content: '\e733';
+}
+
+.wan-icon-tv-o::before {
+  content: '\e734';
+}
+
+.wan-icon-underway-o::before {
+  content: '\e735';
+}
+
+.wan-icon-user-o::before {
+  content: '\e736';
+}
+
+.wan-icon-vip-card-o::before {
+  content: '\e737';
+}
+
+.wan-icon-vip-card::before {
+  content: '\e738';
+}
+
+.wan-icon-send-gift::before {
+  content: '\e739';
+}
+
+.wan-icon-wap-home::before {
+  content: '\e73a';
+}
+
+.wan-icon-wap-nav::before {
+  content: '\e73b';
+}
+
+.wan-icon-volume-o::before {
+  content: '\e73c';
+}
+
+.wan-icon-video::before {
+  content: '\e73d';
+}
+
+.wan-icon-wap-home-o::before {
+  content: '\e73e';
+}
+
+.wan-icon-volume::before {
+  content: '\e73f';
+}
+
+.wan-icon-warning::before {
+  content: '\e740';
+}
+
+.wan-icon-weapp-nav::before {
+  content: '\e741';
+}
+
+.wan-icon-wechat-pay::before {
+  content: '\e742';
+}
+
+.wan-icon-warning-o::before {
+  content: '\e743';
+}
+
+.wan-icon-wechat::before {
+  content: '\e744';
+}
+
+.wan-icon-setting-o::before {
+  content: '\e745';
+}
+
+.wan-icon-youzan-shield::before {
+  content: '\e746';
+}
+
+.wan-icon-warn-o::before {
+  content: '\e747';
+}
+
+.wan-icon-smile-comment::before {
+  content: '\e748';
+}
+
+.wan-icon-user-circle-o::before {
+  content: '\e749';
+}
+
+.wan-icon-video-o::before {
+  content: '\e74a';
+}
+
+.wan-icon-add-square::before {
+  content: '\e65c';
+}
+
+.wan-icon-add::before {
+  content: '\e65d';
+}
+
+.wan-icon-arrow-down::before {
+  content: '\e65e';
+}
+
+.wan-icon-arrow-up::before {
+  content: '\e65f';
+}
+
+.wan-icon-arrow::before {
+  content: '\e660';
+}
+
+.wan-icon-after-sale::before {
+  content: '\e661';
+}
+
+.wan-icon-add-o::before {
+  content: '\e662';
+}
+
+.wan-icon-alipay::before {
+  content: '\e663';
+}
+
+.wan-icon-ascending::before {
+  content: '\e664';
+}
+
+.wan-icon-apps-o::before {
+  content: '\e665';
+}
+
+.wan-icon-aim::before {
+  content: '\e666';
+}
+
+.wan-icon-award::before {
+  content: '\e667';
+}
+
+.wan-icon-arrow-left::before {
+  content: '\e668';
+}
+
+.wan-icon-award-o::before {
+  content: '\e669';
+}
+
+.wan-icon-audio::before {
+  content: '\e66a';
+}
+
+.wan-icon-bag-o::before {
+  content: '\e66b';
+}
+
+.wan-icon-balance-list::before {
+  content: '\e66c';
+}
+
+.wan-icon-back-top::before {
+  content: '\e66d';
+}
+
+.wan-icon-bag::before {
+  content: '\e66e';
+}
+
+.wan-icon-balance-pay::before {
+  content: '\e66f';
+}
+
+.wan-icon-balance-o::before {
+  content: '\e670';
+}
+
+.wan-icon-bar-chart-o::before {
+  content: '\e671';
+}
+
+.wan-icon-bars::before {
+  content: '\e672';
+}
+
+.wan-icon-balance-list-o::before {
+  content: '\e673';
+}
+
+.wan-icon-birthday-cake-o::before {
+  content: '\e674';
+}
+
+.wan-icon-bookmark::before {
+  content: '\e675';
+}
+
+.wan-icon-bill::before {
+  content: '\e676';
+}
+
+.wan-icon-bell::before {
+  content: '\e677';
+}
+
+.wan-icon-browsing-history-o::before {
+  content: '\e678';
+}
+
+.wan-icon-browsing-history::before {
+  content: '\e679';
+}
+
+.wan-icon-bookmark-o::before {
+  content: '\e67a';
+}
+
+.wan-icon-bulb-o::before {
+  content: '\e67b';
+}
+
+.wan-icon-bullhorn-o::before {
+  content: '\e67c';
+}
+
+.wan-icon-bill-o::before {
+  content: '\e67d';
+}
+
+.wan-icon-calendar-o::before {
+  content: '\e67e';
+}
+
+.wan-icon-brush-o::before {
+  content: '\e67f';
+}
+
+.wan-icon-card::before {
+  content: '\e680';
+}
+
+.wan-icon-cart-o::before {
+  content: '\e681';
+}
+
+.wan-icon-cart-circle::before {
+  content: '\e682';
+}
+
+.wan-icon-cart-circle-o::before {
+  content: '\e683';
+}
+
+.wan-icon-cart::before {
+  content: '\e684';
+}
+
+.wan-icon-cash-on-deliver::before {
+  content: '\e685';
+}
+
+.wan-icon-cash-back-record::before {
+  content: '\e686';
+}
+
+.wan-icon-cashier-o::before {
+  content: '\e687';
+}
+
+.wan-icon-chart-trending-o::before {
+  content: '\e688';
+}
+
+.wan-icon-certificate::before {
+  content: '\e689';
+}
+
+.wan-icon-chat::before {
+  content: '\e68a';
+}
+
+.wan-icon-clear::before {
+  content: '\e68b';
+}
+
+.wan-icon-chat-o::before {
+  content: '\e68c';
+}
+
+.wan-icon-checked::before {
+  content: '\e68d';
+}
+
+.wan-icon-clock::before {
+  content: '\e68e';
+}
+
+.wan-icon-clock-o::before {
+  content: '\e68f';
+}
+
+.wan-icon-close::before {
+  content: '\e690';
+}
+
+.wan-icon-closed-eye::before {
+  content: '\e691';
+}
+
+.wan-icon-circle::before {
+  content: '\e692';
+}
+
+.wan-icon-cluster-o::before {
+  content: '\e693';
+}
+
+.wan-icon-column::before {
+  content: '\e694';
+}
+
+.wan-icon-comment-circle-o::before {
+  content: '\e695';
+}
+
+.wan-icon-cluster::before {
+  content: '\e696';
+}
+
+.wan-icon-comment::before {
+  content: '\e697';
+}
+
+.wan-icon-comment-o::before {
+  content: '\e698';
+}
+
+.wan-icon-comment-circle::before {
+  content: '\e699';
+}
+
+.wan-icon-completed::before {
+  content: '\e69a';
+}
+
+.wan-icon-credit-pay::before {
+  content: '\e69b';
+}
+
+.wan-icon-coupon::before {
+  content: '\e69c';
+}
+
+.wan-icon-debit-pay::before {
+  content: '\e69d';
+}
+
+.wan-icon-coupon-o::before {
+  content: '\e69e';
+}
+
+.wan-icon-contact::before {
+  content: '\e69f';
+}
+
+.wan-icon-descending::before {
+  content: '\e6a0';
+}
+
+.wan-icon-desktop-o::before {
+  content: '\e6a1';
+}
+
+.wan-icon-diamond-o::before {
+  content: '\e6a2';
+}
+
+.wan-icon-description::before {
+  content: '\e6a3';
+}
+
+.wan-icon-delete::before {
+  content: '\e6a4';
+}
+
+.wan-icon-diamond::before {
+  content: '\e6a5';
+}
+
+.wan-icon-delete-o::before {
+  content: '\e6a6';
+}
+
+.wan-icon-cross::before {
+  content: '\e6a7';
+}
+
+.wan-icon-edit::before {
+  content: '\e6a8';
+}
+
+.wan-icon-ellipsis::before {
+  content: '\e6a9';
+}
+
+.wan-icon-down::before {
+  content: '\e6aa';
+}
+
+.wan-icon-discount::before {
+  content: '\e6ab';
+}
+
+.wan-icon-ecard-pay::before {
+  content: '\e6ac';
+}
+
+.wan-icon-envelop-o::before {
+  content: '\e6ae';
+}
+
+.wan-icon-shield-o::before {
+  content: '\e74b';
+}
+
+.wan-icon-guide-o::before {
+  content: '\e74c';
+}
+
+.wan-icon-cash-o::before {
+  content: '\e74d';
+}
+
+.wan-icon-qq::before {
+  content: '\e74e';
+}
+
+.wan-icon-wechat-moments::before {
+  content: '\e74f';
+}
+
+.wan-icon-weibo::before {
+  content: '\e750';
+}
+
+.wan-icon-link-o::before {
+  content: '\e751';
+}
+
+.wan-icon-miniprogram-o::before {
+  content: '\e752';
+}

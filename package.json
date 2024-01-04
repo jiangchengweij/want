@@ -1,13 +1,14 @@
 {
   "name": "want",
   "version": "1.0.0",
-  "description": "",
+  "description": "基于UniApp的轻量、高效组件库",
   "scripts": {
     "dev": "node build/dev.mjs",
     "dev:h5": "uni -p h5 -c src/vite.config.js",
     "lint": "npm run lint:script && npm run lint:style",
     "lint:script": "eslint --ext .js,.ts --fix --quiet ./packages",
     "lint:style": "stylelint --fix \"./packages/**/*.scss\"",
+    "build:lib": "npx gulp -f build/compiler.js --series buildLib",
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview"

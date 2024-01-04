@@ -14,8 +14,10 @@ const transformApiDoc = require('./transformApiDoc');
 
 const exec = util.promisify(require('child_process').exec);
 const componentPrefix = 'wan';
+const libConfig = path.resolve(__dirname, '../tsconfig.lib.json');
 const srcConfig = path.resolve(__dirname, '../tsconfig.example.json');
 const src = path.resolve(__dirname, '../packages');
+const libDir = path.resolve(__dirname, '../lib');
 const srcPageJsonPath = path.resolve(__dirname, '../src/pages.json');
 const srcDistDir = path.resolve(
   __dirname,
@@ -118,6 +120,11 @@ const cleaner = (path) =>
   };
 
 const tasks = {};
+
+tasks.buildLib = gulp.series(
+  cleaner(libDir),
+  gulp.parallel(tsCompiler(libDir, libConfig), staticCopier(libDir))
+);
 
 tasks.buildExample = gulp.series(
   cleaner(srcDistDir),

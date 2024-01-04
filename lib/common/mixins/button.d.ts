@@ -1,0 +1,30 @@
+import type { ExtractPropTypes, SetupContext } from 'vue';
+export declare const emits: readonly ["getuserinfo", "contact", "getphonenumber", "getrealtimephonenumber", "error", "launchapp", "opensetting", "agreeprivacyauthorization", "chooseavatar"];
+export declare const props: {
+    id: StringConstructor;
+    lang: StringConstructor;
+    businessId: NumberConstructor;
+    sessionFrom: StringConstructor;
+    sendMessageTitle: StringConstructor;
+    sendMessagePath: StringConstructor;
+    sendMessageImg: StringConstructor;
+    showMessageCard: BooleanConstructor;
+    appParameter: StringConstructor;
+    ariaLabel: StringConstructor;
+    openType: StringConstructor;
+    getUserProfileDesc: StringConstructor;
+};
+type Props = ExtractPropTypes<typeof props>;
+type Context = SetupContext<CanWrite<typeof emits>>;
+export declare function setup<P, C>(props: P & Props, context: C & Context): {
+    onGetUserInfo(event: any): void;
+    onContact(event: any): void;
+    onGetPhoneNumber(event: any): void;
+    onGetRealTimePhoneNumber(event: any): void;
+    onError(event: any): void;
+    onLaunchApp(event: any): void;
+    onOpenSetting(event: any): void;
+    onAgreePrivacyAuthorization(event: any): void;
+    onChooseAvatar(event: any): void;
+};
+export {};
