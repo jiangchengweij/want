@@ -2,6 +2,9 @@
   "name": "want",
   "version": "1.0.1",
   "description": "基于UniApp的轻量、高效组件库",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "dev": "node build/dev.mjs",
     "dev:h5": "uni -p h5 -c src/vite.config.js",
