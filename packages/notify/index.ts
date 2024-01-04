@@ -58,21 +58,6 @@ interface NotifyOptions {
   onClose?: () => void;
 }
 
-const defaultOptions: NotifyOptions = {
-  selector: '#wan-notify',
-  type: 'danger',
-  message: '',
-  background: '',
-  duration: 3000,
-  zIndex: 110,
-  top: 0,
-  color: '#fff',
-  safeAreaInsetTop: false,
-  onClick: () => {},
-  onOpened: () => {},
-  onClose: () => {}
-};
-
 export function setup(props: Props, context: Context) {
   const { expose } = context;
   const { statusBarHeight } = getSystemInfoSync();
@@ -129,7 +114,7 @@ export function setup(props: Props, context: Context) {
 
   const show = (opt?: NotifyOptions) => {
     clearTimeout(_timer);
-    setOptions({ ...defaultOptions, ...opt });
+    setOptions({ ...props, ...opt });
     options.show = true;
     nextTick(options.onOpened);
 
@@ -142,7 +127,7 @@ export function setup(props: Props, context: Context) {
 
   const hide = (opt?: NotifyOptions) => {
     clearTimeout(_timer);
-    setOptions({ ...defaultOptions, ...opt });
+    setOptions({ ...props, ...opt });
     options.show = false;
 
     nextTick(options.onClose);

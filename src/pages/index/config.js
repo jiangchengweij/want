@@ -243,7 +243,7 @@ export default [
         title: 'SubmitBar 提交订单栏'
       },
       {
-        path: '/action',
+        path: '/goods-action',
         title: 'GoodsAction 商品导航'
       }
     ]

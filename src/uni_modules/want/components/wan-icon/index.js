@@ -12,9 +12,8 @@ export const props = {
     default: 'wan-icon'
   },
   name: String,
-  customClass: String,
-  infoClass: String,
-  hostClass: [String, Array]
+  customClass: null,
+  infoClass: null
 };
 export const setup = (props, context) => {
   const { emit } = context;
@@ -23,7 +22,7 @@ export const setup = (props, context) => {
   }
   const rootClass = computed(() => {
     const { classPrefix, name, customClass } = props;
-    const classes = [customClass];
+    const classes = [customClass || ''];
     if (classPrefix !== 'wan-icon') {
       classes.push('wan-icon--custom');
     }

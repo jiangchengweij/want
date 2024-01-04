@@ -30,20 +30,6 @@ export const props = {
     default: 0
   }
 };
-const defaultOptions = {
-  selector: '#wan-notify',
-  type: 'danger',
-  message: '',
-  background: '',
-  duration: 3000,
-  zIndex: 110,
-  top: 0,
-  color: '#fff',
-  safeAreaInsetTop: false,
-  onClick: () => {},
-  onOpened: () => {},
-  onClose: () => {}
-};
 export function setup(props, context) {
   const { expose } = context;
   const { statusBarHeight } = getSystemInfoSync();
@@ -93,7 +79,7 @@ export function setup(props, context) {
   let _timer = 0;
   const show = (opt) => {
     clearTimeout(_timer);
-    setOptions({ ...defaultOptions, ...opt });
+    setOptions({ ...props, ...opt });
     options.show = true;
     nextTick(options.onOpened);
     if (options.duration > 0 && options.duration !== Infinity) {
@@ -104,7 +90,7 @@ export function setup(props, context) {
   };
   const hide = (opt) => {
     clearTimeout(_timer);
-    setOptions({ ...defaultOptions, ...opt });
+    setOptions({ ...props, ...opt });
     options.show = false;
     nextTick(options.onClose);
   };

@@ -49,25 +49,7 @@ interface ToastOptions {
   onClose?: () => void;
 }
 
-const defaultOptions = {
-  type: 'text',
-  mask: false,
-  message: '',
-  show: true,
-  zIndex: 1000,
-  duration: 2000,
-  position: 'middle',
-  forbidClick: false,
-  loadingType: 'circular'
-};
-
-type ToastType = {
-  clear: () => void;
-  timer?: number;
-};
-
 let queue: AnyObject[] = [];
-const currentOptions: ToastOptions = { ...defaultOptions };
 
 export function setup(
   this: ComponentInternalInstance,
@@ -75,6 +57,8 @@ export function setup(
   context: Context
 ) {
   const { expose } = context;
+
+  let _time = 0;
 
   const options = reactive<ToastOptions>({
     show: props.show,
@@ -97,35 +81,33 @@ export function setup(
   }
 
   function clear() {
+    setOptions({ show: false });
+    if (options.onClose) {
+      options.onClose();
+    }
+  }
+
+  function allClear() {
     queue.forEach((toast) => {
-      toast.clear();
+      toast.exposed.clear();
     });
     queue = [];
   }
 
-  const toast: ToastType = {
-    clear: () => {
-      setOptions({ show: false });
-      if (options.onClose) {
-        options.onClose();
-      }
-    }
-  };
-
   const show = (opts: ToastOptions) => {
     const curOpt = {
-      ...currentOptions,
+      ...props,
       ...opts
     } as ToastOptions;
 
-    queue.push(toast);
+    queue.push(this);
     setOptions(curOpt);
-    clearTimeout(toast.timer);
+    clearTimeout(_time);
 
     if (curOpt.duration != null && curOpt.duration > 0) {
-      toast.timer = setTimeout(() => {
-        toast.clear();
-        queue = queue.filter((item) => item !== toast);
+      _time = setTimeout(() => {
+        clear();
+        queue = queue.filter((item) => item !== this);
       }, curOpt.duration);
     }
   };
@@ -135,7 +117,8 @@ export function setup(
   expose({
     show,
     clear,
-    setOptions
+    setOptions,
+    allClear
   });
 
   return {

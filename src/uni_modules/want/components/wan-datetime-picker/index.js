@@ -5,7 +5,6 @@ import {
   currentYear,
   isValidDate,
   range,
-  padZero,
   times,
   getTrueValue,
   getMonthEndDay,
@@ -60,6 +59,9 @@ export const props = {
   toolbarClass: null,
   columnClass: null
 };
+function padZero(val) {
+  return `00${val}`.slice(-2);
+}
 export function setup(props, context) {
   const { emit } = context;
   const state = reactive({

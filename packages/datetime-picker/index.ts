@@ -12,7 +12,6 @@ import {
   currentYear,
   isValidDate,
   range,
-  padZero,
   times,
   getTrueValue,
   getMonthEndDay,
@@ -78,6 +77,10 @@ export const props = {
 export type Props = ExtractPropTypes<typeof props>;
 
 export type Context = SetupContext<CanWrite<typeof emits>>;
+
+function padZero(val: string | number) {
+  return `00${val}`.slice(-2);
+}
 
 export function setup(props: Props, context: Context) {
   const { emit } = context;

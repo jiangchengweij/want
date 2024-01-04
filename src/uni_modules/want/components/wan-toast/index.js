@@ -24,21 +24,10 @@ export const props = {
   },
   top: null
 };
-const defaultOptions = {
-  type: 'text',
-  mask: false,
-  message: '',
-  show: true,
-  zIndex: 1000,
-  duration: 2000,
-  position: 'middle',
-  forbidClick: false,
-  loadingType: 'circular'
-};
 let queue = [];
-const currentOptions = { ...defaultOptions };
 export function setup(props, context) {
   const { expose } = context;
+  let _time = 0;
   const options = reactive({
     show: props.show,
     mask: props.mask,
@@ -58,31 +47,29 @@ export function setup(props, context) {
     });
   }
   function clear() {
+    setOptions({ show: false });
+    if (options.onClose) {
+      options.onClose();
+    }
+  }
+  function allClear() {
     queue.forEach((toast) => {
-      toast.clear();
+      toast.exposed.clear();
     });
     queue = [];
   }
-  const toast = {
-    clear: () => {
-      setOptions({ show: false });
-      if (options.onClose) {
-        options.onClose();
-      }
-    }
-  };
   const show = (opts) => {
     const curOpt = {
-      ...currentOptions,
+      ...props,
       ...opts
     };
-    queue.push(toast);
+    queue.push(this);
     setOptions(curOpt);
-    clearTimeout(toast.timer);
+    clearTimeout(_time);
     if (curOpt.duration != null && curOpt.duration > 0) {
-      toast.timer = setTimeout(() => {
-        toast.clear();
-        queue = queue.filter((item) => item !== toast);
+      _time = setTimeout(() => {
+        clear();
+        queue = queue.filter((item) => item !== this);
       }, curOpt.duration);
     }
   };
@@ -90,7 +77,8 @@ export function setup(props, context) {
   expose({
     show,
     clear,
-    setOptions
+    setOptions,
+    allClear
   });
   return {
     bem,

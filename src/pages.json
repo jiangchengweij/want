@@ -79,12 +79,12 @@
         "navigationBarTitleText": "Toast 轻提示"
       }
     },
-    // {
-    //   "path": "pages/components/grid/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Grid 宫格"
-    //   }
-    // },
+    {
+      "path": "pages/components/grid/index",
+      "style": {
+        "navigationBarTitleText": "Grid 宫格"
+      }
+    },
     {
       "path": "pages/components/tab/index",
       "style": {
@@ -97,12 +97,12 @@
         "navigationBarTitleText": "Notify 消息通知"
       }
     },
-    // {
-    //   "path": "pages/components/skeleton/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Skeleton 骨架屏"
-    //   }
-    // },
+    {
+      "path": "pages/components/skeleton/index",
+      "style": {
+        "navigationBarTitleText": "Skeleton 骨架屏"
+      }
+    },
     {
       "path": "pages/components/switch/index",
       "style": {
@@ -115,24 +115,24 @@
         "navigationBarTitleText": "Field 输入框"
       }
     },
-    // {
-    //   "path": "pages/components/action/index",
-    //   "style": {
-    //     "navigationBarTitleText": "GoodsAction 商品导航"
-    //   }
-    // },
-    // {
-    //   "path": "pages/components/dialog/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Dialog 弹出框"
-    //   }
-    // },
-    // {
-    //   "path": "pages/components/collapse/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Collapse 折叠面板"
-    //   }
-    // },
+    {
+      "path": "pages/components/goods-action/index",
+      "style": {
+        "navigationBarTitleText": "GoodsAction 商品导航"
+      }
+    },
+    {
+      "path": "pages/components/dialog/index",
+      "style": {
+        "navigationBarTitleText": "Dialog 弹出框"
+      }
+    },
+    {
+      "path": "pages/components/collapse/index",
+      "style": {
+        "navigationBarTitleText": "Collapse 折叠面板"
+      }
+    },
     {
       "path": "pages/components/action-sheet/index",
       "style": {
@@ -145,90 +145,84 @@
         "navigationBarTitleText": "ShareSheet 分享面板"
       }
     },
-    // {
-    //   "path": "pages/components/progress/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Progress 进度条"
-    //   }
-    // },
-    // {
-    //   "path": "pages/components/divider/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Divider 分割线"
-    //   }
-    // },
-    // {
-    //   "path": "pages/components/empty/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Empty 空状态"
-    //   }
-    // },
+    {
+      "path": "pages/components/progress/index",
+      "style": {
+        "navigationBarTitleText": "Progress 进度条"
+      }
+    },
+    {
+      "path": "pages/components/divider/index",
+      "style": {
+        "navigationBarTitleText": "Divider 分割线"
+      }
+    },
+    {
+      "path": "pages/components/empty/index",
+      "style": {
+        "navigationBarTitleText": "Empty 空状态"
+      }
+    },
     {
       "path": "pages/components/search/index",
       "style": {
         "navigationBarTitleText": "Search 搜索"
       }
     },
-    // {
-    //   "path": "pages/components/steps/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Steps 步骤条"
-    //   }
-    // },
-    // {
-    //   "path": "pages/components/swipe-cell/index",
-    //   "style": {
-    //     "navigationBarTitleText": "SwipeCell 滑动单元格"
-    //   }
-    // },
-    // {
-    //   "path": "pages/components/sidebar/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Sidebar 侧边导航"
-    //   }
-    // },
-    // {
-    //   "path": "pages/components/tabbar/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Tabbar 标签栏"
-    //   }
-    // },
+    {
+      "path": "pages/components/steps/index",
+      "style": {
+        "navigationBarTitleText": "Steps 步骤条"
+      }
+    },
+    {
+      "path": "pages/components/swipe-cell/index",
+      "style": {
+        "navigationBarTitleText": "SwipeCell 滑动单元格"
+      }
+    },
+    {
+      "path": "pages/components/sidebar/index",
+      "style": {
+        "navigationBarTitleText": "Sidebar 侧边导航"
+      }
+    },
+    {
+      "path": "pages/components/tabbar/index",
+      "style": {
+        "navigationBarTitleText": "Tabbar 标签栏"
+      }
+    },
     {
       "path": "pages/components/dropdown-menu/index",
       "style": {
         "navigationBarTitleText": "DropdownMenu 下拉菜单"
       }
     },
-    // {
-    //   "path": "pages/components/index-bar/index",
-    //   "style": {
-    //     "navigationBarTitleText": "IndexBar 索引栏"
-    //   }
-    // },
-    // {
-    //   "path": "pages/components/notice-bar/index",
-    //   "style": {
-    //     "navigationBarTitleText": "NoticeBar 通知栏"
-    //   }
-    // },
-    // {
-    //   "path": "pages/components/count-down/index",
-    //   "style": {
-    //     "navigationBarTitleText": "CountDown 倒计时"
-    //   }
-    // },
-    // {
-    //   "path": "pages/components/tree-select/index",
-    //   "style": {
-    //     "navigationBarTitleText": "TreeSelect 分类选择"
-    //   }
-    // },
-    // {
-    //   "path": "pages/components/circle/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Circle 进度条"
-    //   }
-    // },
+    {
+      "path": "pages/components/index-bar/index",
+      "style": {
+        "navigationBarTitleText": "IndexBar 索引栏"
+      }
+    },
+    {
+      "path": "pages/components/notice-bar/index",
+      "style": {
+        "navigationBarTitleText": "NoticeBar 通知栏"
+      }
+    },
+    {
+      "path": "pages/components/count-down/index",
+      "style": {
+        "navigationBarTitleText": "CountDown 倒计时"
+      }
+    },
+    {
+      "path": "pages/components/tree-select/index",
+      "style": {
+        "navigationBarTitleText": "TreeSelect 分类选择"
+      }
+    },
     {
       "path": "pages/components/calendar/index",
       "style": {
@@ -295,36 +289,36 @@
         "navigationBarTitleText": "Uploader 文件上传"
       }
     },
-    // {
-    //   "path": "pages/components/nav-bar/index",
-    //   "style": {
-    //     "navigationBarTitleText": "NavBar 导航栏"
-    //   }
-    // },
+    {
+      "path": "pages/components/nav-bar/index",
+      "style": {
+        "navigationBarTitleText": "NavBar 导航栏"
+      }
+    },
     {
       "path": "pages/components/style/index",
       "style": {
         "navigationBarTitleText": "Style 内置样式"
       }
+    },
+    {
+      "path": "pages/components/submit-bar/index",
+      "style": {
+        "navigationBarTitleText": "SubmitBar 提交订单栏"
+      }
+    },
+    {
+      "path": "pages/components/card/index",
+      "style": {
+        "navigationBarTitleText": "Card 商品卡片"
+      }
+    },
+    {
+      "path": "pages/components/area/index",
+      "style": {
+        "navigationBarTitleText": "Area 省市区选择"
+      }
     }
-    // {
-    //   "path": "pages/components/submit-bar/index",
-    //   "style": {
-    //     "navigationBarTitleText": "SubmitBar 提交订单栏"
-    //   }
-    // },
-    // {
-    //   "path": "pages/components/card/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Card 商品卡片"
-    //   }
-    // },
-    // {
-    //   "path": "pages/components/area/index",
-    //   "style": {
-    //     "navigationBarTitleText": "Area 省市区选择"
-    //   }
-    // }
   ],
   "globalStyle": {
     "navigationBarTextStyle": "black",

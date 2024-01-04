@@ -1,0 +1,20 @@
+@import '../common/style/var.scss';
+
+.wan-action {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  box-sizing: content-box;
+  height: var(--goods-action-height, $goods-action-height);
+  background-color: var(
+    --goods-action-background-color,
+    $goods-action-background-color
+  );
+
+  &--safe {
+    padding-bottom: var(--window-bottom);
+  }
+}
